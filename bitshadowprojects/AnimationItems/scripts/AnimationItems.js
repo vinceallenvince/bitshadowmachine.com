@@ -12,7 +12,7 @@ var worldA = new BitShadowMachine.World();
  */
 BitShadowMachine.System.init(function() {
   var getRandomNumber = BitShadowMachine.Utils.getRandomNumber;
-  for (var i = 0; i < 500; i++) {
+  for (var i = 0; i < 700; i++) {
     var scale = getRandomNumber(0.25, 2, true);
     this.add('Box', {
       location: new BitShadowMachine.Vector(getRandomNumber(0, worldA.width),

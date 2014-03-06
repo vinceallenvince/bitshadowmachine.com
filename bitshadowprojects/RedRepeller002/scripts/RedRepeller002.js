@@ -42,11 +42,11 @@ var worldA = new BitShadowMachine.World(document.getElementById('worldA'), {
   width: 960,
   height: 540,
   resolution: 4,
-  backgroundColor: [0, 0, 0],
   colorMode: 'hsla',
   hue: 0,
   saturation: 0,
   lightness: 0,
+  noMenu: true
 });
 
 /**
@@ -63,7 +63,7 @@ BitShadowMachine.System.init(function() {
     location: new BitShadowMachine.Vector(worldA.width / 4, worldA.height / 2),
     beforeStep: function() {
 
-      this.mass = Math.abs(SimplexNoise.noise(BitShadowMachine.System.clock * 0.001, 0) * 100);
+      this.mass = Math.abs(SimplexNoise.noise(BitShadowMachine.System.clock * 0.01, 0) * 10);
 
       for (var i = 0; i < 2; i++) {
 
