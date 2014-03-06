@@ -1,0 +1,4 @@
+### FILES
+config.ru
+*.swp
+.DS_Store

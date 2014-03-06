@@ -1,0 +1,116 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  background-color: rgb(30, 30, 30);
+  color: #555;
+}
+
+img, video, object{ max-width: 100% }
+
+article, header, nav, section {
+    display: block;
+}
+
+code {
+  color: #ccc;
+  font-size: 0.75em;
+}
+
+/* Layout
+================================ */
+
+.wrap {
+  margin: 60px auto;
+  max-width: 1480px;
+  overflow: hidden;
+  width: 90%;
+  border: 0 solid #ccc;
+  text-align: center;
+}
+
+.story-container {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.story {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 320px;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(30, 30, 30);
+}
+
+.story section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1em 0;
+  background-color: rgba(50, 50, 50, 0.5);
+  color: rgb(90, 90, 90);
+  font-size: 0.65em;
+  text-align: center;
+  visibility: hidden;
+}
+
+.story section.active {
+  visibility: visible;
+}
+
+.project-name {
+  padding: 10px 10px;
+  background-color: rgba(40, 40, 40, 1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contents, .header, footer {
+  text-align: left;
+  color: rgb(120, 120, 120);
+}
+
+footer.main {
+  text-align: center;
+}
+
+.separator {
+  color: rgb(50, 50, 50);
+}
+
+footer {
+  margin-top: 60px;
+  color: rgb(160, 160, 160);
+}
+
+.site-title { font-weight: bold; }
+
+.site-title a, .site-title a:hover, .site-title a:visited { color: rgb(160, 160, 160); }
+
+.site-title a:hover { text-decoration: underline; }
+
+a, a:hover, a:visited {
+  color: #008cbf;
+  text-decoration: none;
+}
+
+.logo-small {
+  width: 160px;
+  height: 160px;
+}
+
+@media only screen and (max-width: 320px){
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrap {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>{{site.title}} | {{title}}</title>
+  <link rel="alternate" type="application/rss+xml" href="{{site.feed_url}}" />
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300">
+  {% include 'includes/ga' %}
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="story-container">
+      <a href="/about" class="story">
+        <img src="/assets/avatar.gif">
+        <section>Bit-Shadow Machine | About</section>
+      </a><div class="project-name"></div>
+    </div>
+
+    {% for page in site.pages %}
+      {% if page.url == '/projects' %}
+        {% for post in page.posts limit:20 %}
+          <div class="story-container">
+            <a href="{{post.url}}" class="story">
+              <img src="{{post.assets[0].url}}">
+              <section>Posted on {{post.date | date: "%b %d, %Y"}}</section>
+            </a><div class="project-name"> {{post.title}} {% if post.meta.vimeo %}| <a href="{{post.meta.vimeo}}">video</a>{% endif %}</div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+    {% include 'includes/footer' %}
+
+  </div>
+  <script type="text/javascript">
+    var i, max, stories = [].slice.call(document.querySelectorAll('.story'), 0);
+    for (i = 0, max = stories.length; i < max; i++) {
+      stories[i].addEventListener('mouseover', function(e) {
+        e.target.parentNode.querySelector('section').className = 'active';
+      }, false);
+      stories[i].addEventListener('mouseout', function(e) {
+        e.target.parentNode.querySelector('section').className = '';
+      }, false);
+    }
+  </script>
+</body>
+
+</html>
